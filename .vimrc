@@ -1,7 +1,17 @@
 " syntax on
 syntax enable
+syntax on               " turn syntax highlighting on by default
 set background=dark
 colorscheme DarkModeReloaded
+
+set ruler               " show the current row and column
+set hlsearch            " highlight searches
+set incsearch           " do incremental searching
+set showmatch           " jump to matches when entering regexp
+
+filetype on             " detect type of file
+filetype indent on      " load indent file for specific file type
+
 
 " the diffience between the map use :help map-modes
 inoremap jk <esc>
@@ -21,6 +31,10 @@ noremap k  gk
 " let the searched string display in the middle of the window
 map n nzz
 map N Nzz
+
+" use for terminal debug
+" see :h termdebug
+packadd! termdebug
 
 map sv <C-w>t<C-w>H<CR>
 map sq <C-w>t<C-w>K<CR>
@@ -60,6 +74,7 @@ set softtabstop=2
 set shiftwidth=2    " Sets the >> and << width
 set autoindent
 
+set path+=""
 set nobackup        " remove backup files
 set backupcopy=yes " 设置备份时的行为为覆盖
 
